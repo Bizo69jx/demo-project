@@ -29,11 +29,11 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=java-webapp-sonarscan
-        # ## Upload to github packages and ensure that you update the pom.xml at the level of distrubution management.
-        # - name: Upload to github packages
-        #   run: mvn --batch-mode deploy
-        #   env:
-        #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        ## Upload to github packages and ensure that you update the pom.xml at the level of distrubution management.
+        - name: Upload to github packages
+          run: mvn --batch-mode deploy
+          env:
+            GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         # ## set up authenticate to aws. make sure you create a secret for accesskey, secretkey and region
         # - name: authenticate to aws account
         #   uses: aws-actions/configure-aws-credentials@v1
