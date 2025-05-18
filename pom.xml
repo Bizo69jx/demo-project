@@ -107,7 +107,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>xashy-webapp</finalName>
+		<finalName>demo-webapp</finalName>
 		
 		<plugins>
 			<plugin>
