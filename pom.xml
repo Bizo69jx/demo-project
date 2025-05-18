@@ -96,7 +96,7 @@
 	    <repository>
 	      <id>github</id>
 	      <name></name>
-	      <url>https://maven.pkg.github.com/Bizo69jx/pipeline-to-ECS</url>
+	      <url>https://maven.pkg.github.com/Bizo69jx/demo-project</url>
 	    </repository>
 	    
 	    
