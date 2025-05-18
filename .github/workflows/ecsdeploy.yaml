@@ -59,19 +59,19 @@ jobs:
 
         #     ## github action should create a new task definition revision
 
-        # - name: Fill in the new image ID in the Amazon ECS task definition
-        #   id: task-def
-        #   uses: aws-actions/amazon-ecs-render-task-definition@v1
-        #   with:
-        #       task-definition: task-definition.json
-        #       container-name: eposi
-        #       image: ${{ steps.build-image.outputs.image }}
+        - name: Fill in the new image ID in the Amazon ECS task definition
+          id: task-def
+          uses: aws-actions/amazon-ecs-render-task-definition@v1
+          with:
+              task-definition: task-definition.json
+              container-name: xashy-webapp
+              image: ${{ steps.build-image.outputs.image }}
               
-        # ### github action should update the service with the lastes task-definition revision. Make sure you change the name of the cluster and service name 
-        # - name: Deploy Amazon ECS task definition
-        #   uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-        #   with:
-        #     task-definition: ${{ steps.task-def.outputs.task-definition }}
-        #     service: eposi-serv
-        #     cluster: eposi-cluster
-        #     wait-for-service-stability: true
+        ### github action should update the service with the lastes task-definition revision. Make sure you change the name of the cluster and service name 
+        - name: Deploy Amazon ECS task definition
+          uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+          with:
+            task-definition: ${{ steps.task-def.outputs.task-definition }}
+            service: xashy-td-service
+            cluster: xashy-webapp-cluster
+            wait-for-service-stability: true
