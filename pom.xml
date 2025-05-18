@@ -22,8 +22,10 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.organization>xashy</sonar.organization>
- 		<sonar.host.url>https://sonarcloud.io</sonar.host.url> 
+		<!-- <sonar.organization>xashy</sonar.organization>
+ 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>  -->
+		<sonar.organization>sonar-scan</sonar.organization>
+		<sonar.host.url>http://3.239.245.43:9000</sonar.host.url>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
