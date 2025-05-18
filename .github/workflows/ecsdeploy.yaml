@@ -20,15 +20,15 @@ jobs:
           with:
             distribution: 'adopt'
             java-version: '11'  
-        # ### use maven to package artifact, when these step executes the artifact should be created.. 
-        # - name: package with maven 
-        #   run: mvn package 
-        # ### use sonarqube to do code analysis. Ensure that you have a sonarqube server running and you've created a project. 
-        # - name: Build and analyze
-        #   env:
-        #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-        #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        #   run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=java-webapp123
+        ### use maven to package artifact, when these step executes the artifact should be created.. 
+        - name: package with maven 
+          run: mvn package 
+        ### use sonarqube to do code analysis. Ensure that you have a sonarqube server running and you've created a project. 
+        - name: Build and analyze
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=java-webapp-sonarscan
         # ## Upload to github packages and ensure that you update the pom.xml at the level of distrubution management.
         # - name: Upload to github packages
         #   run: mvn --batch-mode deploy
