@@ -98,11 +98,6 @@
 	      <name></name>
 	      <url>https://maven.pkg.github.com/bizo69jx/demo-project</url>
 	    </repository>
-	    <snapshotRepository>
-	      <id>github</id>
-	      <name></name>
-	      <url>https://maven.pkg.github.com/Bizo69jx/demo-project</url>
-	    </snapshotRepository> -->  
 	    
 	</distributionManagement>
 	
