@@ -1,9 +1,7 @@
-// File: vulnerable.js
 const http = require('http');
 const url = require('url');
 const mysql = require('mysql');
 
-// ⚠️ Insecure DB connection (use your own creds/host)
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -12,11 +10,9 @@ const db = mysql.createConnection({
 });
 
 const server = http.createServer((req, res) => {
-  // Parse `?id=` from URL
   const queryObject = url.parse(req.url, true).query;
   const userId = queryObject.id;
 
-  // 🔥 Vulnerable: direct string concatenation allows SQL injection
   const sql = `SELECT name, email FROM users WHERE id = ${userId}`;
 
   db.query(sql, (err, results) => {
