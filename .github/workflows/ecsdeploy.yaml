@@ -27,7 +27,7 @@ jobs:
         - name: Build and analyze
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-            SONAR_TOKEN: sqp_e060d2a0fe9616fa3a38897deb132bb023303b33
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=java-webapp-sonarscan
         ## Upload to github packages and ensure that you update the pom.xml at the level of distrubution management.
         - name: Upload to github packages
